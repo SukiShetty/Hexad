@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="names">
+        <item>Harry Potter and the Philosopher's Stone</item>
+        <item>Harry Potter and the Chamber of Secrets</item>
+        <item>The Hobbit </item>
+        <item>1984 by George Orwell</item>
+        <item>Pride and Prejudice by Jane Austen</item>
+        <item>To Kill a Mockingbird by Harper Lee</item>
+        <item>The Catcher in the Rye</item>
+        <item>The Great Gatsby</item>
+
+
+        <item>salad</item>
+        <item>sandwich</item>
+        <item>bread</item>
+        <item>fish</item>
+        <item>shrimp</item>
+        <item>rice</item>
+        <item>pizza</item>
+        <item>eggs</item>
+        <item>apple juice</item>
+
+
+        <item>Airlift</item>
+        <item>Bajrangi Bhaijaan</item>
+        <item>Bajirao Mastani</item>
+        <item>Prem Ratan Dhan Payo</item>
+        <item>Baby</item>
+        <item>Dilwale</item>
+        <item>Baahubali: The Beginning</item>
+
+
+        <item>Final Fantasy</item>
+        <item>Galaga</item>
+        <item>Warcraft II</item>
+        <item>Star Wars</item>
+        <item>The Oregon Trail</item>
+        <item>Monkey Island </item>
+
+    </string-array>
+
+    <string-array name="description">
+        <item>by J. R. R. Tolkien</item>
+        <item> by J. D. Salinger</item>
+        <item>by J. K. Rowling</item>
+        <item>by Jane Austen</item>
+        <item> by Dan Brown</item>
+        <item>by Suzanne Collins</item>
+        <item> by George Orwell</item>
+        <item>by Ray Bradbury</item>
+
+
+        <item>vegan</item>
+        <item>vegan</item>
+        <item>Non vegan</item>
+        <item>Non vegan</item>
+        <item>Non vegan</item>
+        <item>Vegan</item>
+        <item>Non vegan</item>
+        <item>Non vegan</item>
+        <item>Vegan</item>
+
+
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2017</item>
+        <item>2015</item>
+        <item>2016</item>
+
+
+        <item>2001</item>
+        <item>2002</item>
+        <item>2003 II</item>
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+
+    </string-array>
+
+</resources>
