@@ -41,9 +41,6 @@ public class ListFavoriteItemsAdapter extends RecyclerView.Adapter<ListFavoriteI
         public FavoritesViewHolder(ListRowBinding binding, ListFavoriteItemsAdapter listFavoriteItemsAdapter) {
             super(binding.getRoot());
             mBinding = binding;
-//            listItemLayout = (ConstraintLayout) view.findViewById(R.id.listitem);
-//            name = (TextView) view.findViewById(R.id.title);
-//            description = (TextView) view.findViewById(R.id.details);
             ratingBar = (RatingBar) binding.listitem.findViewById(R.id.ratingBar);
             ratingBar.setOnRatingBarChangeListener(this);
             mWeakReference = new WeakReference<ListFavoriteItemsAdapter>(listFavoriteItemsAdapter);
@@ -73,9 +70,6 @@ public class ListFavoriteItemsAdapter extends RecyclerView.Adapter<ListFavoriteI
     @Override
     public void onBindViewHolder(final FavoritesViewHolder holder, final int position) {
         holder.mBinding.setFavoriteitem(mFavoriteItems.get(position));
-//        holder.name.setText(mFavoriteItems.get(position).getName());
-//        holder.description.setText(mFavoriteItems.get(position).getDescription());
-//        holder.ratingBar.setRating(mFavoriteItems.get(position).getRating());
     }
 
     @Override
