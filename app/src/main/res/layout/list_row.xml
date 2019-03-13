@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
 
+    <data>
+        <variable
+            name="favoriteitem"
+            type="test.android.com.hexad.model.FavoriteItem"/>
+    </data>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/listitem"
@@ -19,7 +25,7 @@
         android:layout_marginRight="10dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="This is title"
+        android:text="@{favoriteitem.name}"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@+id/listitem" />
@@ -30,7 +36,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="This is details"
+        android:text="@{favoriteitem.description}"
         android:textColor="@color/grey"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="@+id/title"
@@ -46,7 +52,9 @@
         app:layout_constraintTop_toBottomOf="@+id/title"
         app:layout_constraintLeft_toRightOf="@+id/details"
         android:numStars="5"
-        android:stepSize="1"/>
+        android:stepSize="1"
+        android:rating="@{favoriteitem.rating}"/>
 
 
 </android.support.constraint.ConstraintLayout>
+</layout>

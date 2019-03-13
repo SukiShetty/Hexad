@@ -1,10 +1,9 @@
 package test.android.com.hexad.adapter;
 
+import android.databinding.DataBindingUtil;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -13,6 +12,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import test.android.com.hexad.R;
+import test.android.com.hexad.databinding.ListRowBinding;
 import test.android.com.hexad.interfaces.RatingChangeListener;
 import test.android.com.hexad.model.FavoriteItem;
 
@@ -36,12 +36,15 @@ public class ListFavoriteItemsAdapter extends RecyclerView.Adapter<ListFavoriteI
 
         WeakReference<ListFavoriteItemsAdapter> mWeakReference;
 
-        public FavoritesViewHolder(View view, ListFavoriteItemsAdapter listFavoriteItemsAdapter) {
-            super(view);
-            listItemLayout = (ConstraintLayout) view.findViewById(R.id.listitem);
-            name = (TextView) view.findViewById(R.id.title);
-            description = (TextView) view.findViewById(R.id.details);
-            ratingBar = (RatingBar) view.findViewById(R.id.ratingBar);
+        private ListRowBinding mBinding;
+
+        public FavoritesViewHolder(ListRowBinding binding, ListFavoriteItemsAdapter listFavoriteItemsAdapter) {
+            super(binding.getRoot());
+            mBinding = binding;
+//            listItemLayout = (ConstraintLayout) view.findViewById(R.id.listitem);
+//            name = (TextView) view.findViewById(R.id.title);
+//            description = (TextView) view.findViewById(R.id.details);
+            ratingBar = (RatingBar) binding.listitem.findViewById(R.id.ratingBar);
             ratingBar.setOnRatingBarChangeListener(this);
             mWeakReference = new WeakReference<ListFavoriteItemsAdapter>(listFavoriteItemsAdapter);
         }
@@ -62,16 +65,17 @@ public class ListFavoriteItemsAdapter extends RecyclerView.Adapter<ListFavoriteI
 
     @Override
     public FavoritesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row, parent, false);
-        return new FavoritesViewHolder(view, this);
+        ListRowBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()),R.layout.list_row, parent, false);
+        return new FavoritesViewHolder(binding, this);
     }
 
 
     @Override
     public void onBindViewHolder(final FavoritesViewHolder holder, final int position) {
-        holder.name.setText(mFavoriteItems.get(position).getName());
-        holder.description.setText(mFavoriteItems.get(position).getDescription());
-        holder.ratingBar.setRating(mFavoriteItems.get(position).getRating());
+        holder.mBinding.setFavoriteitem(mFavoriteItems.get(position));
+//        holder.name.setText(mFavoriteItems.get(position).getName());
+//        holder.description.setText(mFavoriteItems.get(position).getDescription());
+//        holder.ratingBar.setRating(mFavoriteItems.get(position).getRating());
     }
 
     @Override

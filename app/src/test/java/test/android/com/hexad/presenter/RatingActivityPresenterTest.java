@@ -24,6 +24,9 @@ public class RatingActivityPresenterTest {
     @Mock
     private RatingActivityContract.View mView;
 
+    @Mock
+    private RatingActivityContract.RatingModel mModel;
+
     private RatingActivityPresenter mRatingActivityPresenter;
 
     @Before
