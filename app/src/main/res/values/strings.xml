@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hexad</string>
+    <string name="error_string">No data found</string>
+    <string name="random_rating">Random rating</string>
+</resources>
